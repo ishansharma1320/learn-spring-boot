@@ -1,5 +1,6 @@
 package com.ishan.learns.springboot.firstapp.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class FirstRestController {
 
+    @Value("${app.user.name}")
+    private String username;
     // expose "/" endpoint
     @GetMapping("/")
     String saysHello(){
-        return "Hello World";
+        return "Hello " + username;
     }
 }
