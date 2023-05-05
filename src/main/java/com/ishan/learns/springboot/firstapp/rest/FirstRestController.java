@@ -15,9 +15,17 @@ public class FirstRestController {
 
     @Value("${app.user.name}")
     private String username;
+
+    @Value("${coach.name}")
+    private String coachName;
     // expose "/" endpoint
     @GetMapping("/")
     String saysHello(){
-        return "Hello " + username;
+        return "Hello There" + username;
+    }
+
+    @GetMapping("/getCoach")
+    String getCoachName(){
+        return "Your coach name is "+coachName;
     }
 }

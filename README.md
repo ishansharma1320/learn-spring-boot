@@ -14,3 +14,7 @@ installed in the system
 2. spring-boot-starter-actuator: exposes useful endpoints that helps in app performance monitoring
 3. spring-boot-starter-security: used to add an authentication layer
 
+## To inject custom properties from application.properties
+
+1. define the custom property you want
+2. use  `@Value("${app.user.name}")` like this on top of a class variable
