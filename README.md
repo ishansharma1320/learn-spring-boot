@@ -18,3 +18,19 @@ installed in the system
 
 1. define the custom property you want
 2. use  `@Value("${app.user.name}")` like this on top of a class variable
+
+## Core Properties to Setup a Spring Server
+### 1. Logging 
+   1. logging properties allows us to control and print messages based on their level per package
+   2. we can also write logs to a file
+### 2. Web Properties
+   1. allows us to setup port (default is 8080)
+   2. can change the base url of an application (context path)
+   3. session timeout 
+### 3. Actuator Properties
+   1. including and excluding endpoints
+   2. can change the base url/path
+### 4. Security Properties
+   1. setting default username & password
+### 5. Data Properties
+   1. Setting up database configuration
