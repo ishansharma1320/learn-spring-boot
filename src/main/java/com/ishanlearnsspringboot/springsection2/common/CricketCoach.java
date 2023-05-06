@@ -1,4 +1,4 @@
-package com.ishanlearnsspringboot.springsection2;
+package com.ishanlearnsspringboot.springsection2.common;
 
 import org.springframework.stereotype.Component;
 
@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class CricketCoach implements Coach{
     @Override
     public String getDailyWorkout() {
-        return "Run 10 laps of the ground";
+        return "Run 10 laps of the ground !!!!!";
     }
 }
