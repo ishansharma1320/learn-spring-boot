@@ -8,10 +8,17 @@
 		<version>3.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+<<<<<<< HEAD
 	<groupId>com.ishan.learns.springboot</groupId>
 	<artifactId>firstapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>firstapp</name>
+=======
+	<groupId>com.ishanlearnsspringboot</groupId>
+	<artifactId>spring-section-2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-section-2</name>
+>>>>>>> 0cf634d (Setup Base Project)
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -19,15 +26,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
