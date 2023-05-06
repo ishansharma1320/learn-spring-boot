@@ -1,4 +1,4 @@
-package com.ishanlearnsspringboot.springsection2.common;
+package com.ishanlearnsspringboot.util.common;
 
 import org.springframework.stereotype.Component;
 
