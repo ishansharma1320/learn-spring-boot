@@ -26,7 +26,7 @@ public class DemoRestController {
         System.out.println("PreDestroy: " + getClass().getSimpleName());
     }
     @Autowired
-    private void  setCoach(@Qualifier("boxingCoach") Coach coach){
+    private void  setCoach(@Qualifier("swimCoach") Coach coach){
         this.myCoach = coach;
     }
 
