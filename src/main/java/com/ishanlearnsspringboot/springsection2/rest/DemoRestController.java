@@ -1,6 +1,8 @@
 package com.ishanlearnsspringboot.springsection2.rest;
 
 import com.ishanlearnsspringboot.util.common.Coach;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,16 @@ public class DemoRestController {
 
     public DemoRestController(){
         System.out.println("In Constructor: " + getClass().getSimpleName());
+    }
+
+    @PostConstruct
+    private void doSomeStartupStuff(){
+        System.out.println("PostConstruct: " + getClass().getSimpleName());
+    }
+
+    @PreDestroy
+    private void doSomeDestroyStuff(){
+        System.out.println("PreDestroy: " + getClass().getSimpleName());
     }
     @Autowired
     private void  setCoach(@Qualifier("boxingCoach") Coach coach){
