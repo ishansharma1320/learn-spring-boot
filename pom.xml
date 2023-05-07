@@ -8,26 +8,24 @@
 		<version>3.0.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ishanlearnsspringboot</groupId>
-	<artifactId>spring-section-2</artifactId>
+	<groupId>com.ishan.learns.springboot</groupId>
+	<artifactId>hibernate-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-section-2</name>
-	<description>Demo project for Spring Boot</description>
+	<name>hibernate-demo</name>
+	<description>Hibernate Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
-			<optional>true</optional>
-
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
