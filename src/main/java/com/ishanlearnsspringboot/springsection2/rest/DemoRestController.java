@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoRestController {
     private Coach myCoach;
     @Autowired
-    public DemoRestController(@Qualifier("boxingCoach") Coach coach){
+    private void  setCoach(@Qualifier("footballCoach") Coach coach){
         this.myCoach = coach;
     }
 
