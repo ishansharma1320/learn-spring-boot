@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoRestController {
     private Coach myCoach;
+
+    public DemoRestController(){
+        System.out.println("In Constructor: " + getClass().getSimpleName());
+    }
     @Autowired
     private void  setCoach(@Qualifier("boxingCoach") Coach coach){
         this.myCoach = coach;

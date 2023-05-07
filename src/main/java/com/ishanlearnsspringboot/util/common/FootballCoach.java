@@ -4,6 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class FootballCoach implements Coach{
+
+    FootballCoach(){
+        System.out.println("In Constructor: " + getClass().getSimpleName());
+    }
     @Override
     public String getDailyWorkout() {
         return "Practice 100 goal kicks";
