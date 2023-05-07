@@ -2,6 +2,7 @@ package com.ishanlearnsspringboot.springsection2.rest;
 
 import com.ishanlearnsspringboot.util.common.Coach;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoRestController {
     private Coach myCoach;
     @Autowired
-    private void setCoach(Coach coach){
+    public DemoRestController(@Qualifier("boxingCoach") Coach coach){
         this.myCoach = coach;
     }
 
