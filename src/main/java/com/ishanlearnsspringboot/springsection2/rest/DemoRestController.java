@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoRestController {
     private Coach myCoach;
     @Autowired
-    DemoRestController(Coach myCoach){
-        this.myCoach = myCoach;
+    private void setCoach(Coach coach){
+        this.myCoach = coach;
     }
 
     @GetMapping("/getDailyWorkout")
