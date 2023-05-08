@@ -21,7 +21,8 @@ public class HibernateDemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 	return runner -> {
 //		getAllStudents(studentDAO);
-		deleteAllStudents(studentDAO);
+//		deleteAllStudents(studentDAO);
+		createStudents(studentDAO);
 	};
 	}
 
@@ -58,14 +59,24 @@ public class HibernateDemoApplication {
 		}
 	}
 
-	private void createStudent(StudentDAO studentDAO) {
+	private void createStudents(StudentDAO studentDAO) {
 		// create a new student
 		Student student = new Student("Jimmy","Deacon","jimmy.deacon@gmail.com");
+		Student student2 = new Student("John","Doe","john.doe@gmail.com");
+		Student student3 = new Student("Mary","Jane","jane.mary@gmail.com");
+
 		System.out.println("Saving: "+ student.toString());
 		studentDAO.save(student);
 		System.out.println("Saved Student with ID: "+student.getId());
 
-		Student foundStudent = studentDAO.findById(student.getId());
-		System.out.println(foundStudent.toString());
+		System.out.println("Saving: "+ student2.toString());
+		studentDAO.save(student2);
+		System.out.println("Saved Student with ID: "+student2.getId());
+
+		System.out.println("Saving: "+ student3.toString());
+		studentDAO.save(student3);
+		System.out.println("Saved Student with ID: "+student3.getId());
+
+
 	}
 }
