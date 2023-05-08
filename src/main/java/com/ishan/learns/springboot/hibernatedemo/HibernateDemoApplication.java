@@ -21,8 +21,18 @@ public class HibernateDemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 	return runner -> {
 //		getAllStudents(studentDAO);
-		updateStudent(studentDAO);
+		deleteAllStudents(studentDAO);
 	};
+	}
+
+	private void deleteAllStudents(StudentDAO studentDAO){
+		System.out.println(studentDAO.deleteAll());
+	}
+	private void deleteStudent(StudentDAO studentDAO) {
+		Integer id = 1;
+		studentDAO.deleteById(id);
+		Student student = studentDAO.findById(id);
+		System.out.println(student);
 	}
 
 	private void updateStudent(StudentDAO studentDAO){
