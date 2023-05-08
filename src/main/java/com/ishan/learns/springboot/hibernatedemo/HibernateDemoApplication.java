@@ -21,10 +21,19 @@ public class HibernateDemoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 	return runner -> {
 //		getAllStudents(studentDAO);
-		findByLastName(studentDAO,"Deacon");
+		updateStudent(studentDAO);
 	};
 	}
 
+	private void updateStudent(StudentDAO studentDAO){
+		Integer id = 1;
+		Student student = studentDAO.findById(id);
+		student.setFirstName("Jacky");
+		studentDAO.update(student);
+		student = studentDAO.findById(id);
+		System.out.println(student);
+
+	}
 	private void findByLastName(StudentDAO studentDAO, String lastName) {
 		List<Student> students = studentDAO.findByLastName(lastName);
 		for(Student student: students){
