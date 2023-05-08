@@ -21,11 +21,16 @@ public class HibernateDemoApplication {
 	};
 	}
 
+
+
 	private void createStudent(StudentDAO studentDAO) {
 		// create a new student
 		Student student = new Student("Ishan","Sharma","ishan.sharma@gmail.com");
 		System.out.println("Saving: "+ student.toString());
 		studentDAO.save(student);
 		System.out.println("Saved Student with ID: "+student.getId());
+
+		Student foundStudent = studentDAO.findById(student.getId());
+		System.out.println(foundStudent.toString());
 	}
 }
