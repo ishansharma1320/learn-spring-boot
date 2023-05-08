@@ -7,6 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 @SpringBootApplication
 public class HibernateDemoApplication {
 
@@ -17,15 +20,20 @@ public class HibernateDemoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO){
 	return runner -> {
-		createStudent(studentDAO);
+		getAllStudents(studentDAO);
 	};
 	}
 
-
+	private void getAllStudents(StudentDAO studentDAO){
+		List<Student> students = studentDAO.findAll();
+		for(Student student: students){
+			System.out.println(student);
+		}
+	}
 
 	private void createStudent(StudentDAO studentDAO) {
 		// create a new student
-		Student student = new Student("Ishan","Sharma","ishan.sharma@gmail.com");
+		Student student = new Student("Jimmy","Deacon","jimmy.deacon@gmail.com");
 		System.out.println("Saving: "+ student.toString());
 		studentDAO.save(student);
 		System.out.println("Saved Student with ID: "+student.getId());
