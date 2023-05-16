@@ -1,6 +1,5 @@
 package com.ishan.learns.springboot.cruddemo.rest;
 
-import com.ishan.learns.springboot.cruddemo.dao.EmployeeDAO;
 import com.ishan.learns.springboot.cruddemo.entity.Employee;
 import com.ishan.learns.springboot.cruddemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +41,7 @@ public class EmployeeRestController {
 
     @PutMapping("/employees")
     private Employee updateEmployee(@RequestBody Employee employee){
-        return this.employeeService.update(employee);
+        return this.employeeService.save(employee);
     }
 
     @DeleteMapping("/employees/{employeeId}")
