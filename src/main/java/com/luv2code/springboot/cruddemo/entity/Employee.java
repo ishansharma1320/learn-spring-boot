@@ -1,10 +1,12 @@
-package com.ishan.learns.springboot.cruddemo.entity;
+package com.luv2code.springboot.cruddemo.entity;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="Employee")
+@Table(name="employee")
 public class Employee {
+
+    // define fields
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -19,7 +21,9 @@ public class Employee {
     @Column(name="email")
     private String email;
 
-    Employee(){
+
+    // define constructors
+    public Employee() {
 
     }
 
@@ -29,15 +33,7 @@ public class Employee {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                '}';
-    }
+    // define getter/setter
 
     public int getId() {
         return id;
@@ -70,4 +66,23 @@ public class Employee {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    // define toString
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }
+
+
+
+
+
+
+
+
